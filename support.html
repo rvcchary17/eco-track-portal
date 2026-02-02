@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EcoTrack Help & Support</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7f6;
+    margin: 0; padding: 0;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  }
+  nav {
+            background: #00b894;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+  h1 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 20px;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .accordion-question {
+    background: #eef5ef;
+    color: #2e7d32;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 10px 0;
+    transition: background 0.3s;
+    position: relative;
+  }
+
+  .accordion-question:hover {
+    background: #dcedc8;
+  }
+
+  .accordion-question::after {
+    content: '\25BC';
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s;
+  }
+
+  .accordion-question.active::after {
+    transform: rotate(180deg);
+  }
+
+  .accordion-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background: #f9fdf9;
+    border-radius: 6px;
+  }
+
+  .accordion-answer p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+  }
+
+</style>
+</head>
+<body>
+  <nav>
+        <div class="logo" style="font-size: 24px; font-weight: bold;">EcoTrack Telangana</div>
+        <a href="index.html">← Back to Portal</a>
+    </nav>
+
+<div class="container">
+  <h1>Help & Support</h1>
+
+  <div class="accordion-item">
+    <div class="accordion-question">How do I report a problem?</div>
+    <div class="accordion-answer">
+      <p>Go to the 'Report an Issue' section, fill in the required details, and submit. Your report will be reviewed by the EcoTrack team.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-question">How do I give feedback?</div>
+    <div class="accordion-answer">
+      <p>Visit the 'Feedback' section, provide your suggestions or comments, and submit. Your feedback helps improve the portal.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-question">How do I use the website?</div>
+    <div class="accordion-answer">
+      <p>Use the navigation menu to report issues, give feedback, and check the status of your submissions. The interface is simple and self-explanatory.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-question">How long does it take for my report or feedback to be considered?</div>
+    <div class="accordion-answer">
+      <p>The EcoTrack team reviews submissions regularly. Typical feedback/report processing may take a few days depending on the volume.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const questions = document.querySelectorAll('.accordion-question');
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      const currentlyActive = document.querySelector('.accordion-question.active');
+      if(currentlyActive && currentlyActive!==q){
+        currentlyActive.classList.remove('active');
+        currentlyActive.nextElementSibling.style.maxHeight = 0;
+        currentlyActive.nextElementSibling.style.padding = "0 15px";
+      }
+
+      q.classList.toggle('active');
+      const answer = q.nextElementSibling;
+      if(q.classList.contains('active')){
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.style.padding = "10px 15px";
+      } else {
+        answer.style.maxHeight = 0;
+        answer.style.padding = "0 15px";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

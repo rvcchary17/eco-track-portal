@@ -1,0 +1,38 @@
+:root {
+    --tg-emerald: #00b894;
+    --tg-blue: #0984e3;
+    --tg-gold: #fdcb6e;
+    --white: #ffffff;
+}
+
+body { font-family: 'Poppins', sans-serif; background: #f4f7f6; margin: 0; }
+
+/* Vibrant Header */
+.hero-header {
+    background: linear-gradient(135deg, #00b894, #00cec9, #0984e3);
+    color: white; padding: 50px 20px; text-align: center;
+}
+
+/* Colorful Portal Buttons */
+.login-btn {
+    background: var(--tg-emerald); color: white; border: none;
+    padding: 15px 30px; border-radius: 10px; cursor: pointer;
+    font-weight: bold; transition: 0.3s; margin: 10px;
+}
+.login-btn:hover { background: var(--tg-blue); transform: scale(1.05); }
+
+/* Dashboard Cards */
+.panel {
+    background: white; border-radius: 15px; padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 6px solid var(--tg-emerald);
+}
+
+.result-card {
+    background: #eefcf9; padding: 15px; border-radius: 10px;
+    border-left: 5px solid var(--tg-emerald); margin-bottom: 10px;
+}
+
+table { width: 100%; border-collapse: collapse; }
+th { background: #f1f2f6; padding: 10px; text-align: left; }
+td { padding: 10px; border-bottom: 1px solid #eee; }

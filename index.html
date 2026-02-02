@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoTrack | Telangana Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+        body {
+            background: #f0f4f8;
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #00b894 0%, #0984e3 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .login-portal {
+            max-width: 1100px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+        }
+        .portal-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .login-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-bottom: 6px solid transparent;
+        }
+        .login-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .city-card { border-color: #00b894; }
+        .city-card .icon-circle { background: #00b894; }
+        
+        .industry-card { border-color: #6c5ce7; }
+        .industry-card .icon-circle { background: #6c5ce7; }
+        
+        .dashboard-card { border-color: #e67e22; }
+        .dashboard-card .icon-circle { background: #e67e22; }
+        
+        .education-card { border-color: #0984e3; }
+        .education-card .icon-circle { background: #0984e3; }
+        
+        .suggest-card { border-color: #d4af37; }
+        .suggest-card .icon-circle { background: #d4af37; }
+        
+        .support-card { border-color: #6b8e23; }
+        .support-card .icon-circle { background: #6b8e23; }
+        
+        .feed-card { border-color: #a29bfe; }
+        .feed-card .icon-circle { background: #a29bfe; }
+
+        .portal-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #2d3436;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .footer-note { text-align: center; color: #636e72; padding: 40px; }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="header-content">
+            <h1 style="letter-spacing: 5px; text-transform: uppercase; font-size: 1.2rem;">Telangana State</h1>
+            <h2 style="font-size: 3rem; margin: 10px 0;">EcoTrack Portal</h2>
+            <p>Unified E-Waste Collection &amp; Component Regeneration System</p>
+        </div>
+    </header>
+
+    <main class="login-portal">
+        <div class="portal-wrapper">
+            <div class="login-card city-card" onclick="location.href='cityofficer.html'">
+                <div class="icon-circle"><i class="fas fa-landmark"></i></div>
+                <h3>City Officer</h3>
+                <p>Log daily e-waste collection weights for districts.</p>
+                <button class="portal-btn">Access Logs</button>
+            </div>
+
+            <div class="login-card industry-card" onclick="location.href='industry.html'">
+                <div class="icon-circle"><i class="fas fa-microchip"></i></div>
+                <h3>Industry Portal</h3>
+                <p>Record extraction of resistors, copper, and precious metals.</p>
+                <button class="portal-btn">Enter Stats</button>
+            </div>
+
+            <div class="login-card dashboard-card" onclick="location.href='dashboard.html'">
+                <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
+                <h3>Visual Dashboard</h3>
+                <p>Sync all data to view real-time efficiency and generation sheets.</p>
+                <button class="portal-btn">View Analytics</button>
+            </div>
+
+            <div class="login-card education-card" onclick="location.href='education.html'">
+                <div class="icon-circle"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Education Center</h3>
+                <p>Learn about e-waste risks, recycling, and urban mining.</p>
+                <button class="portal-btn">Explore Knowledge</button>
+            </div>
+            
+             <div class="login-card suggest-card" onclick="location.href='suggest.html'">
+                <div class="icon-circle"><i class="fas fa-lightbulb"></i></div>
+                <h3>Suggestions</h3>
+                <p>Suggest a review</p>
+                <button class="portal-btn">Suggest</button>
+            </div>
+            
+             <div class="login-card support-card" onclick="location.href='support.html'">
+                <div class="icon-circle"><i class="fas fa-headset"></i></div>
+                <h3>Help  Support</h3>
+                <p>Help desk</p>
+                <button class="portal-btn">FAQ</button>
+            </div>
+            
+             <div class="login-card feed-card" onclick="location.href='fd.html'">
+                <div class="icon-circle"><i class="fas fa-comment-dots"></i></div>
+                <h3>Feeback</h3>
+                <p>Feedback or Report your issue</p>
+                <button class="portal-btn">Feedback</button>
+            </div>
+
+           
+        </div>
+    </main>
+
+    <footer class="footer-note">
+        <p>&copy; 2026 EcoTrack Telangana | Sustainable Hub Initiative</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleAccordion(element) {
+            const answer = element.nextElementSibling;
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        }
+
+        document.getElementById('supportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your request has been submitted to EcoTrack Support!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

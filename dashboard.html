@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoTrack Analytics | Telangana</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #f0f2f5; font-family: 'Segoe UI', sans-serif; margin: 0; }
+        .date-picker { background: #00b894; color: white; padding: 30px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .dashboard-wrapper { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 30px; }
+        .panel { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-top: 6px solid #00b894; min-height: 400px; }
+        
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { text-align: left; border-bottom: 2px solid #eee; padding: 10px; color: #666; }
+        td { padding: 12px 10px; border-bottom: 1px solid #f9f9f9; }
+
+        /* Map & Bubbles */
+        .city-bubble { 
+            display: inline-block; padding: 10px 15px; margin: 5px; 
+            border-radius: 8px; color: white; font-weight: bold; 
+            text-align: center; min-width: 100px; font-size: 0.85rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        nav {
+            background: #00b894;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Stats Styling */
+        .stat-item { background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid #0984e3; }
+        .stat-item h4 { margin: 0; color: #2d3436; font-size: 0.9rem; }
+        .stat-item p { margin: 5px 0 0; font-size: 1.4rem; font-weight: bold; color: #0984e3; }
+        
+        .efficiency-high { color: #00b894 !important; }
+        .images-container { display: flex; gap: 20px; justify-content: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; }
+    </style>
+   
+</head>
+<body>
+    <nav>
+        <div class="logo" style="font-size: 24px; font-weight: bold;">EcoTrack Telangana</div>
+        <a href="index.html">← Back to Portal</a>
+    </nav>
+    <div class="date-picker">
+        <h1>Telangana Eco Track Analytics</h1>
+        <label style="font-size: 1.1rem;">Select Date to Sync Data: </label>
+        <input type="date" id="view-date" onchange="loadAnalytics()">
+    </div>
+
+    <div class="dashboard-wrapper">
+        <div class="panel">
+            <h3>Daily Generation Sheet</h3>
+            <table>
+                <thead>
+                    <tr><th>City</th><th>Collected</th></tr>
+                </thead>
+                <tbody id="table-body">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="panel">
+            <h3>Calculation Summary</h3>
+            <div id="calc-summary">
+                <p style="color: #636e72;">Please select a date to view efficiency.</p>
+            </div>
+            <div class="images-container">
+                <div style="text-align:center"><img src="https://cdn-icons-png.flaticon.com/512/2614/2614343.png" width="50"><br><small>Resistors</small></div>
+                <div style="text-align:center"><img src="https://cdn-icons-png.flaticon.com/512/2906/2906155.png" width="50"><br><small>Copper</small></div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>Density Heatmap</h3>
+            <div id="map-area">
+                <p style="color: #636e72;">Visualizing waste density per city...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Set the default date to today and load the analytics data immediately
+        document.getElementById('view-date').valueAsDate = new Date();
+        loadAnalytics();
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <div class="panel" style="grid-column: span 3; min-height: 500px;">
+    <h3>Production & Recycling Trends</h3>
+    <canvas id="analyticsChart"></canvas>
+    </div>
+</body>
+</html>

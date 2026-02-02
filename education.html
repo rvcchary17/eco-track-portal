@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Waste Awareness Education</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+    :root{--primary:#2fa4a9;--secondary:#e8f6f6;--dark:#1e1e1e;--gray:#5f5f5f;}
+
+    header{
+        padding:15px 60px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        background:#fff;
+        border-bottom:1px solid #ddd;
+        position:sticky;
+        top:0;
+        z-index:1000;
+    }
+    .logo{font-size:22px;font-weight:bold;color:var(--primary);}
+
+    nav { display: flex; align-items: center; }
+    nav a{margin-left:25px;text-decoration:none;color:var(--dark);font-weight:500;}
+    nav a:hover{color:var(--primary);}
+
+    .back-home {
+        background: #d63031;
+        color: white !important;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: background 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .back-home:hover { background: #c0392b; }
+
+    .hero{background:var(--secondary);padding:70px 60px;text-align:center;}
+    .hero h1{font-size:42px;margin-bottom:20px;}
+    .hero p{max-width:750px;margin:auto;color:var(--gray);line-height:1.6;font-size:18px;}
+    .hero .btn{margin-top:30px;display:inline-block;padding:12px 28px;background:var(--primary);color:#fff;text-decoration:none;border-radius:4px;}
+
+    .categories{padding:60px;}
+    .categories h2{text-align:center;margin-bottom:40px;}
+    .category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;}
+    .category-box{padding:30px;border:2px dashed var(--primary);border-radius:10px;text-align:center;font-weight:bold;color:var(--gray);cursor:pointer;transition:all 0.3s ease;}
+    .category-box:hover{background:var(--primary);color:#fff;transform:translateY(-6px);box-shadow:0 10px 25px rgba(47,164,169,0.3);}
+
+    .video-section{padding:60px;background:#f9f9f9;}
+    .video-section h2{text-align:center;margin-bottom:40px;}
+    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+    .video-box{background:#fff;padding:15px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    iframe{width:100%;height:200px;border:none;border-radius:8px;}
+    footer{padding:20px;text-align:center;background:var(--dark);color:#fff;}
+    @media(max-width:768px){header{padding:15px 20px;} nav a:not(.back-home){display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">E-WASTE AWARENESS</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#topics">Categories</a>
+        <a href="#videos">Videos</a>
+        <a href="index.html" class="back-home"><i class="fas fa-home"></i> Back to Home</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>E-Waste Education for Everyone</h1>
+    <p>This website is created to educate people about electronic waste.</p>
+    <a href="#videos" class="btn">Watch & Learn</a>
+</section>
+
+<section class="categories">
+    <h2 id="topics">E-Waste Topics</h2>
+    <div class="category-grid">
+        <div class="category-box" onclick="playVideo('video1')">What is E-Waste</div>
+        <div class="category-box" onclick="playVideo('video2')">Types of E-Waste</div>
+        <div class="category-box" onclick="playVideo('video3')">Health & Environmental Risks</div>
+        <div class="category-box" onclick="playVideo('video4')">Safe Disposal Methods</div>
+    </div>
+</section>
+
+<section class="video-section" id="videos">
+    <h2>Educational Videos</h2>
+    <div class="video-grid">
+        <div class="video-box">
+            <h3>What is E-Waste?</h3>
+            <iframe id="video1" src="https://www.youtube.com/embed/IjQvq-U1_3U"></iframe>
+        </div>
+        <div class="video-box">
+            <h3>Types of E-Waste</h3>
+            <iframe id="video2" src="https://www.youtube.com/embed/2YXAEiy9eXQ"></iframe>
+        </div>
+        <div class="video-box">
+            <h3>Problems Caused by E-Waste</h3>
+            <iframe id="video3" src="https://www.youtube.com/embed/PbuaLGNpb4s"></iframe>
+        </div>
+        <div class="video-box">
+            <h3>Safe Disposal of E-Waste</h3>
+            <iframe id="video4" src="https://www.youtube.com/embed/BCQYES97_Lw"></iframe>
+        </div>
+    </div>
+</section>
+
+<footer>© 2026 E-Waste Awareness</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
